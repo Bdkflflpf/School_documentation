@@ -3,56 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Documentation</title>
+    <title>Praram - School Documentation</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Background Animation -->
-    <div class="animated-bg"></div>
-
-    <!-- Navbar -->
-    <header>
-        <h1>School Documentation</h1>
-        <nav>
-            <a href="#" id="signin-btn">Sign In</a>
-            <a href="#" id="login-btn">Log In</a>
-            <a href="#">Developers</a>
-            <button id="dark-mode-toggle">🌙</button>
-        </nav>
-    </header>
-
-    <!-- Sidebar with Zoro -->
-    <aside>
+    <!-- Sidebar with Roronoa Zoro Image -->
+    <aside class="sidebar">
         <img src="zoro.png" alt="Roronoa Zoro">
     </aside>
 
     <!-- Main Content -->
     <main>
-        <h2 class="animated-text">10<sup>th</sup></h2>
-        <p class="description">Welcome to the School Documentation website. Keep track of your progress and share materials.</p>
+        <!-- Landing Animation -->
+        <h1 id="praram">Praram</h1>
+        <h2 id="class10">Class 10</h2>
         
-        <!-- Student List -->
-        <section class="students">
-            <h3>Others</h3>
-            <ul>
-                <li>Student 1</li>
-                <li>Student 2</li>
-                <li>Student 3</li>
-                <li>More...</li>
-            </ul>
-        </section>
+        <!-- Animated "What Happened Today?" Button -->
+        <button id="whatHappenedBtn">What Happened Today?</button>
+
+        <!-- Active Users Table -->
+        <h3>Most Active Users</h3>
+        <table id="activeUsers">
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Posts</th>
+            </tr>
+        </table>
+
+        <!-- Admin & Group Chat Buttons -->
+        <div class="chat-buttons">
+            <button id="adminChat">Talk to Admin</button>
+            <button id="groupChat">Group Chat</button>
+        </div>
     </main>
 
-    <!-- Sign In & Login Modal -->
-    <div id="auth-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title">Sign In</h2>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button id="auth-btn">Submit</button>
+    <!-- Video Overlay -->
+    <div id="videoOverlay">
+        <div class="video-popup">
+            <h3>Welcome! Enter your name:</h3>
+            <input type="text" id="userName" placeholder="Enter your name">
+            <button id="saveName">Proceed</button>
+            <iframe id="introVideo" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
         </div>
     </div>
 
