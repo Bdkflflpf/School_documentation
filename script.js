@@ -1,31 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Website Loaded!");
+    // Name Setup
+    const videoOverlay = document.getElementById("videoOverlay");
+    const saveNameBtn = document.getElementById("saveName");
 
-    // Dark Mode Toggle
-    const darkModeBtn = document.getElementById("dark-mode-toggle");
-    darkModeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+    saveNameBtn.addEventListener("click", () => {
+        const userName = document.getElementById("userName").value;
+        if (userName) {
+            localStorage.setItem("userName", userName);
+            videoOverlay.style.display = "none";
+        }
     });
 
-    // Sign In & Log In Modal
-    const modal = document.getElementById("auth-modal");
-    const closeBtn = document.querySelector(".close");
+    // Load Active Users (Mock Data)
+    const activeUsersTable = document.getElementById("activeUsers");
+    const users = [
+        { name: "John", posts: 10 },
+        { name: "Alice", posts: 8 },
+        { name: "Bob", posts: 6 }
+    ];
 
-    document.getElementById("signin-btn").addEventListener("click", () => {
-        openModal("Sign In");
+    users.forEach((user, index) => {
+        const row = `<tr><td>${index + 1}</td><td>${user.name}</td><td>${user.posts}</td></tr>`;
+        activeUsersTable.innerHTML += row;
     });
 
-    document.getElementById("login-btn").addEventListener("click", () => {
-        openModal("Log In");
+    // Button Actions
+    document.getElementById("adminChat").addEventListener("click", () => {
+        alert("Opening admin chat...");
     });
 
-    closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
+    document.getElementById("groupChat").addEventListener("click", () => {
+        alert("Opening group chat...");
     });
 
-    function openModal(title) {
-        document.getElementById("modal-title").textContent = title;
-        modal.style.display = "flex";
-    }
+    document.getElementById("whatHappenedBtn").addEventListener("click", () => {
+        alert("Redirecting to today's updates...");
+    });
 });
- 
